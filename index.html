@@ -3,186 +3,280 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RacerFox | Commissions Portal</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <meta name="description" content="RacerFox — edición profesional de AMV, MMV e IMV. Comisiones, precios y contacto.">
+    <title>RacerFox | Editor de Video Anime & Animación de Manga</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.2/src/regular/style.css">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://racerfox1005-source.github.io/Mi-portafolio/">
+    <meta property="og:title" content="RacerFox | Editor de Video Anime & Animación de Manga">
+    <meta property="og:description" content="RacerFox — edición profesional de AMV, MMV e IMV. Comisiones, precios y contacto.">
+    <meta property="og:image" content="https://yt3.googleusercontent.com/sTTEZHYVaYw8qk2eOyPR-9A1h9QnaOM2zzSKPwTyBVsOxYwLQ50C1otye4c61W_j1sPPdnQkjg=s160-c-k-c0x00ffffff-no-rj">
+    <meta property="og:site_name" content="RacerFox">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="https://racerfox1005-source.github.io/Mi-portafolio/">
+    <meta name="twitter:title" content="RacerFox | Editor de Video Anime & Animación de Manga">
+    <meta name="twitter:description" content="RacerFox — edición profesional de AMV, MMV e IMV. Comisiones, precios y contacto.">
+    <meta name="twitter:image" content="https://yt3.googleusercontent.com/sTTEZHYVaYw8qk2eOyPR-9A1h9QnaOM2zzSKPwTyBVsOxYwLQ50C1otye4c61W_j1sPPdnQkjg=s160-c-k-c0x00ffffff-no-rj">
 </head>
 <body>
 
-    <section id="hero" class="hero-section">
-        <video autoplay muted loop playsinline class="hero-video">
-            <source src="principal.mp4" type="video/mp4">
-        </video>
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>Racer<span>Fox</span></h1>
-            <p>Edición de Video Anime & Animación de Manga</p>
-            <div class="hero-buttons">
-                <button class="btn btn-primary" onclick="toggleSeccion('comisiones')">
-                    <i class="ph ph-play-circle"></i> Ver Comisiones
+    <header class="site-header" id="siteHeader" hidden>
+        <div class="site-header__container">
+            <button type="button" class="site-header__logo" data-target="inicio">
+                Racer<span class="site-header__logo-accent">Fox</span>
+            </button>
+
+            <nav aria-label="Navegación principal">
+                <ul class="site-header__nav-list" id="siteNavList">
+                    <li><button type="button" class="site-header__nav-link" data-target="comisiones">Comisiones</button></li>
+                    <li><button type="button" class="site-header__nav-link" data-target="precios">Precios</button></li>
+                </ul>
+            </nav>
+
+            <div class="site-header__actions">
+                <button type="button" class="btn btn--primary btn--small" data-target="contacto">
+                    <i class="ph ph-paper-plane-tilt"></i> Hablemos
                 </button>
-                <button class="btn btn-secondary" onclick="toggleSeccion('precios')">
-                    <i class="ph ph-coins"></i> Precios
-                </button>
-                <button class="btn btn-outline" onclick="toggleSeccion('contacto')">
-                    <i class="ph ph-chat-centered-text"></i> Contacto
+                <button type="button" class="site-header__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="siteNavList">
+                    <i class="ph ph-list"></i>
                 </button>
             </div>
         </div>
-    </section>
+    </header>
 
     <main>
-        <section id="comisiones-section" class="view hidden">
-            <div class="container">
-                <h2 class="section-title">Mis <span>Comisiones</span></h2>
-                <div class="comisiones-grid">
-                    <div class="card-comision">
-                        <div class="video-container">
-                            <span class="badge-mmv">MMV</span>
-                            <video src="video.mp4" controls></video>
-                        </div>
-                        <div class="card-info">
-                            <span class="label-orange">Manga Animación</span>
-                            <h3>Proyecto #1</h3>
-                        </div>
-                    </div>
-                    <div class="card-comision">
-                        <div class="video-container">
-                            <span class="badge-mmv">MMV</span>
-                            <video src="video2.mp4" controls></video>
-                        </div>
-                        <div class="card-info">
-                            <span class="label-orange">Manga Animación</span>
-                            <h3>Proyecto #2</h3>
-                        </div>
-                    </div>
-                    <div class="card-comision">
-                        <div class="video-container">
-                            <span class="badge-mmv">MMV</span>
-                            <video src="video3.mp4" controls></video>
-                        </div>
-                        <div class="card-info">
-                            <span class="label-orange">Manga Animación</span>
-                            <h3>Proyecto #3</h3>
-                        </div>
-                    </div>
-                    <div class="card-comision">
-                        <div class="video-container">
-                            <span class="badge-mmv">MMV y AMV</span>
-                            <video src="video4.mp4" controls></video>
-                        </div>
-                        <div class="card-info">
-                            <span class="label-orange">Manga y Video</span>
-                            <h3>Proyecto #4</h3>
-                        </div>
-                    </div>
-                    <div class="card-comision">
-                        <div class="video-container">
-                            <span class="badge-mmv">IMV</span>
-                            <video src="video5.mp4" controls></video>
-                        </div>
-                        <div class="card-info">
-                            <span class="label-orange">Imagen Animación</span>
-                            <h3>Proyecto #5</h3>
-                        </div>
-                    </div>
-                    <div class="card-comision">
-                        <div class="video-container">
-                            <span class="badge-mmv">MMV</span>
-                            <video src="video6.mp4" controls></video>
-                        </div>
-                        <div class="card-info">
-                            <span class="label-orange">Manga Animación</span>
-                            <h3>Proyecto #6 (ft)</h3>
-                        </div>
-                    </div>
+        <section id="inicio-section" class="hero">
+            <video autoplay muted loop playsinline class="hero__video">
+                <source src="assets/media/principal.mp4" type="video/mp4">
+            </video>
+            <div class="hero__scrim"></div>
+
+            <div class="hero__content">
+                <span class="eyebrow hero__eyebrow">AMV - MMV - IMV</span>
+                <h1 class="hero__title">Racer<span class="hero__title-accent">Fox</span></h1>
+                <p class="hero__subtitle">Edición de Video Anime &amp; Animación de Manga</p>
+
+                <div class="hero__actions">
+                    <button type="button" class="btn btn--primary" data-target="comisiones">
+                        <i class="ph ph-play-circle"></i> Ver comisiones
+                    </button>
+                    <button type="button" class="btn btn--secondary" data-target="precios">
+                        <i class="ph ph-coins"></i> Ver precios
+                    </button>
+                    <button type="button" class="btn btn--outline" data-target="contacto">
+                        <i class="ph ph-chat-centered-text"></i> Contacto
+                    </button>
                 </div>
-                <button class="btn-back" onclick="volverInicio()"><i class="ph ph-arrow-left"></i> Volver</button>
             </div>
         </section>
 
-        <section id="precios-section" class="view hidden">
+        <section id="comisiones-section" class="view view--alt" aria-labelledby="comisiones-title" hidden>
             <div class="container">
-                <h2 class="section-title">Nuestros <span>Precios</span></h2>
-                <div class="precios-grid-modern">
-                    <div class="card-precio-modern">
-                        <div class="precio-header">
-                            <i class="ph ph-timer"></i>
-                            <h3>Edición por Minuto</h3>
-                        </div>
-                        <ul class="precio-items">
-                            <li><span>AMV/GMV</span><span class="item-price">6$</span></li>
-                            <li><span>MMV/IMV</span><span class="item-price highlight">20$</span></li>
-                        </ul>
-                    </div>
-                    <div class="card-precio-modern">
-                        <div class="precio-header">
-                            <i class="ph ph-waveform-slash"></i>
-                            <h3>Estribillos</h3>
-                        </div>
-                        <ul class="precio-items">
-                            <li><span>MMV/IMV</span><span class="item-price highlight">14$</span></li>
-                        </ul>
-                    </div>
-                        <div class="card-precio-modern">
-                            <div class="precio-header">
-                                <i class="ph ph-clock-countdown"></i>
-                                <h3>MMV/IMV Por Segundos</h3>
-                            </div>
-                            <ul class="precio-items">
-                                <li><span>30 seg</span><span class="item-price">15$</span></li>
-                                <li><span>15 seg</span><span class="item-price highlight">10$</span></li>
-                            </ul>
-                    </div>
+                <div class="section__head">
+                    <span class="eyebrow section__eyebrow">Portafolio</span>
+                    <h2 class="section__title" id="comisiones-title">Mis <span class="section__title-accent">comisiones</span></h2>
+                    <p class="section__text">Cada proyecto cambia según el anime, el ritmo de la canción y el efecto que definimos juntos.</p>
                 </div>
-                <button class="btn-back" onclick="volverInicio()"><i class="ph ph-arrow-left"></i> Volver</button>
+
+                <div class="commissions__grid">
+                    <article class="commission-card">
+                        <div class="commission-card__media" data-video-src="assets/media/video.mp4">
+                            <i class="ph ph-film-strip commission-card__placeholder" aria-hidden="true"></i>
+                            <span class="commission-card__badge">MMV</span>
+                            <button type="button" class="commission-card__play" aria-label="Reproducir Proyecto #1"><i class="ph ph-play-fill"></i></button>
+                            <video class="commission-card__video" preload="none" playsinline></video>
+                        </div>
+                        <div class="commission-card__body">
+                            <span class="commission-card__label">Manga Animación</span>
+                            <h3 class="commission-card__title">Proyecto #1</h3>
+                        </div>
+                    </article>
+
+                    <article class="commission-card">
+                        <div class="commission-card__media" data-video-src="assets/media/video2.mp4">
+                            <i class="ph ph-film-strip commission-card__placeholder" aria-hidden="true"></i>
+                            <span class="commission-card__badge">MMV</span>
+                            <button type="button" class="commission-card__play" aria-label="Reproducir Proyecto #2"><i class="ph ph-play-fill"></i></button>
+                            <video class="commission-card__video" preload="none" playsinline></video>
+                        </div>
+                        <div class="commission-card__body">
+                            <span class="commission-card__label">Manga Animación</span>
+                            <h3 class="commission-card__title">Proyecto #2</h3>
+                        </div>
+                    </article>
+
+                    <article class="commission-card">
+                        <div class="commission-card__media" data-video-src="assets/media/video3.mp4">
+                            <i class="ph ph-film-strip commission-card__placeholder" aria-hidden="true"></i>
+                            <span class="commission-card__badge">MMV</span>
+                            <button type="button" class="commission-card__play" aria-label="Reproducir Proyecto #3"><i class="ph ph-play-fill"></i></button>
+                            <video class="commission-card__video" preload="none" playsinline></video>
+                        </div>
+                        <div class="commission-card__body">
+                            <span class="commission-card__label">Manga Animación</span>
+                            <h3 class="commission-card__title">Proyecto #3</h3>
+                        </div>
+                    </article>
+
+                    <article class="commission-card">
+                        <div class="commission-card__media" data-video-src="assets/media/video4.mp4">
+                            <i class="ph ph-film-strip commission-card__placeholder" aria-hidden="true"></i>
+                            <span class="commission-card__badge">MMV y AMV</span>
+                            <button type="button" class="commission-card__play" aria-label="Reproducir Proyecto #4"><i class="ph ph-play-fill"></i></button>
+                            <video class="commission-card__video" preload="none" playsinline></video>
+                        </div>
+                        <div class="commission-card__body">
+                            <span class="commission-card__label">Manga y Video</span>
+                            <h3 class="commission-card__title">Proyecto #4</h3>
+                        </div>
+                    </article>
+
+                    <article class="commission-card">
+                        <div class="commission-card__media" data-video-src="assets/media/video5.mp4">
+                            <i class="ph ph-film-strip commission-card__placeholder" aria-hidden="true"></i>
+                            <span class="commission-card__badge">IMV</span>
+                            <button type="button" class="commission-card__play" aria-label="Reproducir Proyecto #5"><i class="ph ph-play-fill"></i></button>
+                            <video class="commission-card__video" preload="none" playsinline></video>
+                        </div>
+                        <div class="commission-card__body">
+                            <span class="commission-card__label">Imagen Animación</span>
+                            <h3 class="commission-card__title">Proyecto #5</h3>
+                        </div>
+                    </article>
+
+                    <article class="commission-card">
+                        <div class="commission-card__media" data-video-src="assets/media/video6.mp4">
+                            <i class="ph ph-film-strip commission-card__placeholder" aria-hidden="true"></i>
+                            <span class="commission-card__badge">MMV</span>
+                            <button type="button" class="commission-card__play" aria-label="Reproducir Proyecto #6"><i class="ph ph-play-fill"></i></button>
+                            <video class="commission-card__video" preload="none" playsinline></video>
+                        </div>
+                        <div class="commission-card__body">
+                            <span class="commission-card__label">Manga Animación</span>
+                            <h3 class="commission-card__title">Proyecto #6 (ft)</h3>
+                        </div>
+                    </article>
+                </div>
+
+                <button type="button" class="btn btn--outline btn--back" data-target="inicio"><i class="ph ph-arrow-left"></i> Volver</button>
             </div>
         </section>
 
-        <section id="contacto-section" class="view hidden">
+        <section id="precios-section" class="view" aria-labelledby="precios-title" hidden>
             <div class="container">
-                <h2 class="section-title">Hablemos de tu <span>Idea</span></h2>
-                <div class="contacto-grid-modern">
-                    
-                    <a href="https://www.instagram.com/racerfox_1005raps/" target="_blank" rel="noopener noreferrer" class="contacto-card-new">
-                        <div class="card-glass-glow"></div>
-                        <div class="icon-modern-box"><i class="ph ph-instagram-logo"></i></div>
-                        <h3>Instagram</h3>
-                        <p>Sígueme y hablemos por DM</p>
-                        <span class="btn-visual">Ir ahora <i class="ph ph-arrow-right"></i></span>
-                    </a>
-                    
-                    <a href="javascript:void(0)" onclick="abrirTikTok()" class="contacto-card-new">
-                        <div class="card-glass-glow"></div>
-                        <div class="icon-modern-box"><i class="ph ph-tiktok-logo"></i></div>
-                        <h3>TikTok</h3>
-                        <p>Mira mis últimos edits</p>
-                        <span class="btn-visual">Ver perfil <i class="ph ph-arrow-right"></i></span>
+                <div class="section__head">
+                    <span class="eyebrow section__eyebrow">Tarifas</span>
+                    <h2 class="section__title" id="precios-title">Precios <span class="section__title-accent">claros</span></h2>
+                    <p class="section__text">Elige el formato que mejor se ajuste a tu proyecto: por minuto, por estribillo o por segundos.</p>
+                </div>
+
+                <div class="prices__grid">
+                    <article class="price-card">
+                        <div class="price-card__header">
+                            <div class="price-card__icon"><i class="ph ph-timer"></i></div>
+                            <h3 class="price-card__title">Edición por minuto</h3>
+                        </div>
+                        <ul>
+                            <li class="price-card__item">
+                                <span>AMV / GMV</span>
+                                <span class="price-card__item-value">6$</span>
+                            </li>
+                            <li class="price-card__item">
+                                <span>MMV / IMV</span>
+                                <span class="price-card__item-value price-card__item-value--highlight">20$</span>
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="price-card price-card--featured">
+                        <div class="price-card__header">
+                            <div class="price-card__icon"><i class="ph ph-waveform-slash"></i></div>
+                            <h3 class="price-card__title">Estribillos</h3>
+                        </div>
+                        <ul>
+                            <li class="price-card__item">
+                                <span>MMV / IMV</span>
+                                <span class="price-card__item-value price-card__item-value--highlight">14$</span>
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="price-card">
+                        <div class="price-card__header">
+                            <div class="price-card__icon"><i class="ph ph-clock-countdown"></i></div>
+                            <h3 class="price-card__title">MMV / IMV por segundos</h3>
+                        </div>
+                        <ul>
+                            <li class="price-card__item">
+                                <span>30 seg</span>
+                                <span class="price-card__item-value">15$</span>
+                            </li>
+                            <li class="price-card__item">
+                                <span>15 seg</span>
+                                <span class="price-card__item-value price-card__item-value--highlight">10$</span>
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+
+                <button type="button" class="btn btn--outline btn--back" data-target="inicio"><i class="ph ph-arrow-left"></i> Volver</button>
+            </div>
+        </section>
+
+        <section id="contacto-section" class="view view--alt" aria-labelledby="contacto-title" hidden>
+            <div class="container">
+                <div class="section__head">
+                    <span class="eyebrow section__eyebrow">Contacto</span>
+                    <h2 class="section__title" id="contacto-title">Hablemos de tu <span class="section__title-accent">idea</span></h2>
+                    <p class="section__text">Cuéntame qué idea tienes en mente y la convertimos en una edición real.</p>
+                </div>
+
+                <div class="contact__grid">
+                    <a href="https://www.instagram.com/racerfox_1005raps/" target="_blank" rel="noopener noreferrer" class="contact-card">
+                        <div class="contact-card__icon"><i class="ph ph-instagram-logo"></i></div>
+                        <h3 class="contact-card__title">Instagram</h3>
+                        <p class="contact-card__text">Sígueme y hablemos por DM</p>
+                        <span class="contact-card__cta">Ir ahora <i class="ph ph-arrow-right"></i></span>
                     </a>
 
-                    <a href="https://www.whatsapp.com/channel/0029VbAjnBVEquiZLqhKS112" target="_blank" rel="noopener noreferrer" class="contacto-card-new">
-                        <div class="card-glass-glow"></div>
-                        <div class="icon-modern-box"><i class="ph ph-whatsapp-logo"></i></div>
-                        <h3>Comunidad</h3>
-                        <p>Únete al canal oficial</p>
-                        <span class="btn-visual">Unirme <i class="ph ph-arrow-right"></i></span>
+                    <button type="button" class="contact-card" data-action="tiktok">
+                        <div class="contact-card__icon"><i class="ph ph-tiktok-logo"></i></div>
+                        <h3 class="contact-card__title">TikTok</h3>
+                        <p class="contact-card__text">Mira mis últimos edits</p>
+                        <span class="contact-card__cta">Ver perfil <i class="ph ph-arrow-right"></i></span>
+                    </button>
+
+                    <a href="https://www.whatsapp.com/channel/0029VbAjnBVEquiZLqhKS112" target="_blank" rel="noopener noreferrer" class="contact-card">
+                        <div class="contact-card__icon"><i class="ph ph-whatsapp-logo"></i></div>
+                        <h3 class="contact-card__title">Comunidad</h3>
+                        <p class="contact-card__text">Únete al canal oficial</p>
+                        <span class="contact-card__cta">Unirme <i class="ph ph-arrow-right"></i></span>
                     </a>
                 </div>
-                <button class="btn-back" onclick="volverInicio()"><i class="ph ph-arrow-left"></i> Volver</button>
+
+                <button type="button" class="btn btn--outline btn--back" data-target="inicio"><i class="ph ph-arrow-left"></i> Volver</button>
             </div>
         </section>
     </main>
 
-    <footer class="social-footer">
-        <div class="social-icons">
-            <a href="https://www.youtube.com/@racerfox1005raps/" target="_blank"><i class="ph ph-youtube-logo"></i></a>
-            <a href="https://www.instagram.com/racerfox_1005raps/" target="_blank"><i class="ph ph-instagram-logo"></i></a>
-            <a href="https://www.tiktok.com/@dav_serrano1005" target="_blank"><i class="ph ph-tiktok-logo"></i></a>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="site-footer__social">
+                <a href="https://www.youtube.com/@racerfox1005raps/" target="_blank" rel="noopener noreferrer" class="site-footer__social-link" aria-label="YouTube"><i class="ph ph-youtube-logo"></i></a>
+                <a href="https://www.instagram.com/racerfox_1005raps/" target="_blank" rel="noopener noreferrer" class="site-footer__social-link" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+                <a href="https://www.tiktok.com/@dav_serrano1005" target="_blank" rel="noopener noreferrer" class="site-footer__social-link" aria-label="TikTok"><i class="ph ph-tiktok-logo"></i></a>
+            </div>
+            <p class="site-footer__copyright">&copy; 2026 RacerFox — Creative Portafolio</p>
+            <p class="site-footer__credit">Desarrollado por <a href="https://www.youtube.com/@SlimbeRMusic" class="site-footer__credit-link" target="_blank" rel="noopener noreferrer">SlimbeR</a></p>
         </div>
-        <p>© 2026 RacerFox - Creative Portafolio</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
